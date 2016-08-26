@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCR-PW-YfR">
-                                <rect key="frame" x="-5" y="15" width="610" height="590"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="FCR-PW-YfR" secondAttribute="trailing" constant="-25" id="DMg-Hu-Obl"/>
-                            <constraint firstItem="FCR-PW-YfR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-5" id="Emm-7Y-3B3"/>
-                            <constraint firstItem="FCR-PW-YfR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-25" id="JMJ-2g-BZc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FCR-PW-YfR" secondAttribute="bottom" constant="-5" id="zAi-1N-vqv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FCR-PW-YfR" secondAttribute="trailing" constant="-20" id="DMg-Hu-Obl"/>
+                            <constraint firstItem="FCR-PW-YfR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Emm-7Y-3B3"/>
+                            <constraint firstItem="FCR-PW-YfR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="JMJ-2g-BZc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FCR-PW-YfR" secondAttribute="bottom" id="zAi-1N-vqv"/>
                         </constraints>
                     </view>
                     <connections>
