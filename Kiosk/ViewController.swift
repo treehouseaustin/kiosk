@@ -25,20 +25,24 @@ class ViewController: UIViewController {
 
     let url = NSUserDefaults.standardUserDefaults().stringForKey("url")
     if (url != nil) {
-      webView?.loadRequest(NSURLRequest(URL: NSURL(string: url!)!))
+      webView?.loadRequest(self.loadUrl(url!))
       return
     }
 
-    webView?.loadRequest(NSURLRequest(URL: NSURL(string: "https://tree.house")!))
+    webView?.loadRequest(self.loadUrl("https://tree.house"))
   }
 
   func checkLoadedState() {
     let loadedUrl: NSString? = webView?.request?.URL?.absoluteString
-    let configuredUrl: NSString? = NSUserDefaults.standardUserDefaults().stringForKey("url")
+    let configuredUrl: String? = NSUserDefaults.standardUserDefaults().stringForKey("url")
 
-    if (loadedUrl != nil && configuredUrl != nil && !(loadedUrl!.isEqualToString(configuredUrl! as String))) {
-      webView?.loadRequest(NSURLRequest(URL: NSURL(string: configuredUrl! as String)!))
+    if (loadedUrl != nil && configuredUrl != nil && !(loadedUrl!.isEqualToString(configuredUrl!))) {
+      webView?.loadRequest(self.loadUrl(configuredUrl!))
     }
+  }
+
+  func loadUrl(url: String) -> NSURLRequest {
+    return NSURLRequest(URL: NSURL(string: url)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 30.0)
   }
 
 }
