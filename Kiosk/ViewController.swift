@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     webView?.backgroundColor = UIColor.init(red: 32 / 255, green: 48 / 255, blue: 55 / 255, alpha: 1)
     webView?.opaque = false
     webView?.scrollView.bounces = false
+    webView?.keyboardDisplayRequiresUserAction = false;
     webView?.scrollView.delegate = self;
 
     let url = NSUserDefaults.standardUserDefaults().stringForKey("url")
