@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
 
   @IBOutlet weak var webView:UIWebView?
 
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     webView?.backgroundColor = UIColor.init(red: 32 / 255, green: 48 / 255, blue: 55 / 255, alpha: 1)
     webView?.opaque = false
     webView?.scrollView.bounces = false
+    webView?.scrollView.delegate = self;
 
     let url = NSUserDefaults.standardUserDefaults().stringForKey("url")
     if (url != nil) {
@@ -43,6 +44,10 @@ class ViewController: UIViewController {
 
   func loadUrl(url: String) -> NSURLRequest {
     return NSURLRequest(URL: NSURL(string: url)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 30.0)
+  }
+
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    scrollView.bounds = webView!.bounds
   }
 
 }
