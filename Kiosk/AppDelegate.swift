@@ -18,4 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     vc.checkLoadedState();
   }
 
+  func applicationDidFinishLaunching(application: UIApplication) {
+    UIApplication.sharedApplication().idleTimerDisabled = true
+  }
+
 }
